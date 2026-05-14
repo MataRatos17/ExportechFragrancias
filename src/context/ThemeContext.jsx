@@ -25,7 +25,7 @@ const LIGHT_CSS = `
 
   /* ── Text ──────────────────────────────────────────────────── */
   html.light-mode [class*="text-[#C0C0C0]"] { color: #1A1A1A !important; }
-  html.light-mode [class*="text-[#888888]"] { color: #5E5E5E !important; }
+  html.light-mode [class*="text-[#888888]"] { color: #000000 !important; }
 
   /* Hover text → gold in light mode */
   html.light-mode [class*="hover:text-[#C0C0C0]"]:hover { color: #B49838 !important; }
@@ -64,7 +64,7 @@ const LIGHT_CSS = `
   html.light-mode select:focus,
   html.light-mode textarea:focus { border-color: #D8AF73 !important; }
   html.light-mode input::placeholder,
-  html.light-mode textarea::placeholder { color: rgba(0,0,0,0.28) !important; }
+  html.light-mode textarea::placeholder { color: rgba(255, 0, 0, 0.28) !important; }
   html.light-mode option {
     background-color: #FFFFFF !important;
     color: #1A1A1A !important;
@@ -94,7 +94,7 @@ const LIGHT_CSS = `
   html.light-mode .photo-dark-bg [class*="bg-[#050505]"] { background-color: #050505 !important; }
   html.light-mode .photo-dark-bg [class*="bg-[#141414]"] { background-color: #141414 !important; }
   html.light-mode .photo-dark-bg [class*="text-[#C0C0C0]"] { color: #C0C0C0 !important; }
-  html.light-mode .photo-dark-bg [class*="text-[#888888]"] { color: #888888 !important; }
+  html.light-mode .photo-dark-bg [class*="text-[#888888]"] { color: #000000 !important; }
 
   /* ── Ring (Perfil tabs) ─────────────────────────────────────── */
   html.light-mode [class*="ring-[#0a0a0a]"] { --tw-ring-color: #F5F1EA !important; }
