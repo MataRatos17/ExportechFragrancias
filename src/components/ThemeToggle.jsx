@@ -26,7 +26,7 @@ const ThemeToggle = () => {
         size={11}
         strokeWidth={2.2}
         className="absolute left-[7px] transition-opacity duration-300"
-        style={{ color: isDark ? '#fe00f1' : '#B49838', opacity: isDark ? 0 : 0.4 }}
+        style={{ color: isDark ? '#D8AF73' : '#B49838', opacity: isDark ? 0 : 0.4 }}
       />
       <Sun
         size={11}

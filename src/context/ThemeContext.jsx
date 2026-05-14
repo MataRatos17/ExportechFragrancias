@@ -102,6 +102,13 @@ const LIGHT_CSS = `
   /* ── Grayscale filter on team photos — keep in light ───────── */
   html.light-mode .grayscale { filter: grayscale(1); }
   html.light-mode .group:hover .grayscale { filter: grayscale(0); }
+
+  /* ── Keep all CSS animations running in light mode ────────── */
+  html.light-mode [class*="animate-"] { animation-play-state: running !important; }
+  html.light-mode .btn-pulse.act      { animation-play-state: running !important; }
+  html.light-mode .animate-marquee    { animation-play-state: running !important; }
+  html.light-mode .animate-scroll-indicator { animation-play-state: running !important; }
+
 `;
 
 export const ThemeProvider = ({ children }) => {
