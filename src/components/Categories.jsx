@@ -11,7 +11,7 @@ const Categories = () => (
         {categoryCards.map((card, idx) => (
           <div
             key={card.title}
-            className="group relative h-[520px] w-full md:w-[450px] overflow-hidden rounded-sm cursor-pointer"
+            className="photo-dark-bg group relative h-[520px] w-full md:w-[450px] overflow-hidden rounded-sm cursor-pointer"
             style={{ animationDelay: `${idx * 150}ms` }}
           >
             <div

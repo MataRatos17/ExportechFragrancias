@@ -101,7 +101,7 @@ const Segmentos = () => {
           {segments.map(({ title, icon: Icon, image, desc, stat, statLabel }, idx) => (
             <div
               key={title}
-              className="group relative overflow-hidden bg-[#141414] border border-[#C0C0C0]/10 hover:border-[#D8AF73]/35 transition-all duration-500"
+              className="photo-dark-bg group relative overflow-hidden bg-[#141414] border border-[#C0C0C0]/10 hover:border-[#D8AF73]/35 transition-all duration-500"
               style={{
                 opacity:    visible ? 1 : 0,
                 transform:  visible ? 'translateY(0)' : 'translateY(24px)',
@@ -109,7 +109,7 @@ const Segmentos = () => {
               }}
             >
               {/* Imagem */}
-              <div className="relative h-52 overflow-hidden">
+              <div className="photo-dark-bg relative h-52 overflow-hidden">
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
                   style={{ backgroundImage: `url(${image})` }}

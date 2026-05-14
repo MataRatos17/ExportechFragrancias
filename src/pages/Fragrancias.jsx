@@ -65,6 +65,12 @@ const Fragrancias = () => {
                 Composições exclusivas desenvolvidas com mestres perfumistas. Cada fragrância é uma história pensada para o seu espaço.
               </p>
             </div>
+            <div className="flex gap-3 flex-shrink-0">
+              <Link to="/difusores"
+                className="inline-flex items-center gap-2 border border-[#C0C0C0]/20 hover:border-[#D8AF73]/60 text-[#C0C0C0] hover:text-[#D8AF73] px-6 py-3 text-[11px] tracking-[0.2em] font-bold uppercase transition-colors">
+                Difusores
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -73,12 +79,6 @@ const Fragrancias = () => {
       <section className="bg-[#0a0a0a] py-10 px-6 border-b border-[#C0C0C0]/10">
         <div className="max-w-[1400px] mx-auto">
           <div className="flex gap-3 flex-wrap">
-            <div className="flex gap-3 flex-shrink-0">
-              <Link to="/difusores"
-                className="inline-flex items-center gap-2 border border-[#C0C0C0]/20 hover:border-[#D8AF73]/60 text-[#C0C0C0] hover:text-[#D8AF73] px-6 py-3 text-[11px] tracking-[0.2em] font-bold uppercase transition-colors">
-                Difusores
-              </Link>
-            </div>
             {familias.map(f => {
               const isActive = familia === f;
               const accent = familiaColor[f] || familiaColor.default;
@@ -128,7 +128,6 @@ const Fragrancias = () => {
         <div className="max-w-[1400px] mx-auto">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {products.map(p => (
-              
               <div key={p.id} className="group bg-[#141414] border border-[#C0C0C0]/10 overflow-hidden hover:border-[#D8AF73]/30 transition-all duration-300 flex flex-col">
                 <div className="relative aspect-square overflow-hidden">
                   <img src={p.image} alt={p.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
@@ -212,13 +211,11 @@ const Fragrancias = () => {
               { t: 'Exclusividade Total',   d: 'A sua fragrância será protegida e nunca usada em nenhum outro cliente.' },
               { t: 'Recargas Ilimitadas',   d: 'Programa de recargas com entrega direta no seu espaço.' },
             ].map(({ t, d }) => (
-              
               <div key={t} className="bg-[#0a0a0a] border border-[#C0C0C0]/10 p-6 hover:border-[#D8AF73]/30 transition-colors">
                 <p className="text-[12px] tracking-[0.15em] font-bold uppercase mb-2" style={{ color: '#D8AF73' }}>{t}</p>
                 <p className="text-[#888888] text-[12px] leading-relaxed">{d}</p>
               </div>
             ))}
-            
           </div>
         </div>
       </section>

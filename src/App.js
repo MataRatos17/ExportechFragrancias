@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Toaster } from './components/ui/toaster';
+import { ThemeProvider } from './context/ThemeContext';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Categories from './components/Categories';
@@ -37,23 +38,25 @@ const Home = () => (
 
 function App() {
   return (
-    <div className="App">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/segmentos" element={<Segmentos />} />
-          <Route path="/sobre" element={<Sobre />} />
-          <Route path="/aromaterapia" element={<Aromaterapia />} />
-          <Route path="/contactos" element={<Contactos />} />
-          <Route path="/perfil" element={<Perfil />} />
-          <Route path="/difusores" element={<Difusores />} />
-          <Route path="/fragrancias" element={<Fragrancias />} />
-          <Route path="/politica-de-privacidade" element={<PoliticaPrivacidade />} />
-        </Routes>
-        <CookieConsent />
-      </BrowserRouter>
-      <Toaster />
-    </div>
+    <ThemeProvider>
+      <div className="App">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/"                        element={<Home />} />
+            <Route path="/segmentos"               element={<Segmentos />} />
+            <Route path="/sobre"                   element={<Sobre />} />
+            <Route path="/aromaterapia"            element={<Aromaterapia />} />
+            <Route path="/contactos"               element={<Contactos />} />
+            <Route path="/perfil"                  element={<Perfil />} />
+            <Route path="/difusores"               element={<Difusores />} />
+            <Route path="/fragrancias"             element={<Fragrancias />} />
+            <Route path="/politica-de-privacidade" element={<PoliticaPrivacidade />} />
+          </Routes>
+          <CookieConsent />
+        </BrowserRouter>
+        <Toaster />
+      </div>
+    </ThemeProvider>
   );
 }
 

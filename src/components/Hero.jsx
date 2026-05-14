@@ -28,7 +28,7 @@ const Hero = () => {
   const slide = heroSlides[current];
 
   return (
-    <section className="relative w-full h-[100vh] min-h-[680px] overflow-hidden">
+    <section className="photo-dark-bg relative w-full h-[100vh] min-h-[680px] overflow-hidden">
 
       {/* ── Slides ── */}
       {heroSlides.map((s, i) => (
