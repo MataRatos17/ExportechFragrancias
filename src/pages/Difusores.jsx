@@ -20,7 +20,7 @@ const ordenacoes = [
   { label: 'Preço: Maior', fn: (a, b) => b.priceRaw - a.priceRaw },
 ];
 
-/* Gold tone per category */
+/* Cores de acento por categoria */
 const catColor = {
   Profissional: '#D8AF73',
   Compacto:     '#C0C0C0',
@@ -62,13 +62,7 @@ const Difusores = () => {
               <p className="text-[#888888] text-[17px] leading-[1.8] max-w-2xl">
                 Tecnologia de nebulização a frio que preserva a integridade das fragrâncias. Soluções para cada dimensão de espaço.
               </p>
-            </div>
-            <div className="flex gap-3 flex-shrink-0">
-              <Link to="/fragrancias"
-                className="inline-flex items-center gap-2 border border-[#C0C0C0]/20 hover:border-[#D8AF73]/60 text-[#C0C0C0] hover:text-[#D8AF73] px-6 py-3 text-[11px] tracking-[0.2em] font-bold uppercase transition-colors">
-                Fragrâncias
-              </Link>
-            </div>
+            </div>           
           </div>
         </div>
       </section>
@@ -77,6 +71,18 @@ const Difusores = () => {
       <section className="bg-[#0a0a0a] py-8 px-6 border-b border-[#C0C0C0]/10 sticky top-[125px] z-30">
         <div className="max-w-[1400px] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-center gap-2 flex-wrap">
+            
+            {/* Link Fragrâncias: Agora com o mesmo tamanho, fonte e animação dos botões */}
+            <Link 
+              to="/fragrancias"
+              className="btn-pulse inline-flex items-center justify-center px-4 py-2 border border-[#C0C0C0]/15 text-[#888888] hover:text-[#C0C0C0] hover:border-[#D8AF73]/60 text-[11px] tracking-[0.18em] font-bold uppercase transition-all"
+            >
+              Fragrâncias
+            </Link>
+
+            {/* Separador subtil */}
+            <div className="w-[1px] h-4 bg-[#C0C0C0]/10 mx-1 hidden sm:block" />
+
             {categorias.map(c => {
               const isActive = cat === c;
               const accent = catColor[c] || '#D8AF73';
@@ -101,6 +107,7 @@ const Difusores = () => {
               );
             })}
           </div>
+
           <div className="flex items-center gap-3">
             <span className="text-[#888888] text-[12px] hidden sm:block">
               {products.length} produto{products.length !== 1 ? 's' : ''}

@@ -15,15 +15,15 @@ const tagColor = {
 
 const familias = ['Todas', ...Array.from(new Set(fragrancias.map(f => f.category)))];
 const ordenacoes = [
-  { label: 'Destaque',    fn: () => 0 },
-  { label: 'Preço: Menor',fn: (a, b) => a.priceRaw - b.priceRaw },
-  { label: 'Preço: Maior',fn: (a, b) => b.priceRaw - a.priceRaw },
-  { label: 'Nome A–Z',    fn: (a, b) => a.name.localeCompare(b.name) },
+  { label: 'Destaque',     fn: () => 0 },
+  { label: 'Preço: Menor', fn: (a, b) => a.priceRaw - b.priceRaw },
+  { label: 'Preço: Maior', fn: (a, b) => b.priceRaw - a.priceRaw },
+  { label: 'Nome A–Z',     fn: (a, b) => a.name.localeCompare(b.name) },
 ];
 
 const familiaColor = {
   Oriental:    '#D8AF73',
-  Fresco:      '#C0C0C0',
+  Fresca:      '#C0C0C0',
   Amadeirado:  '#B49838',
   Floral:      '#D8AF73',
   Cítrico:     '#B49838',
@@ -65,20 +65,26 @@ const Fragrancias = () => {
                 Composições exclusivas desenvolvidas com mestres perfumistas. Cada fragrância é uma história pensada para o seu espaço.
               </p>
             </div>
-            <div className="flex gap-3 flex-shrink-0">
-              <Link to="/difusores"
-                className="inline-flex items-center gap-2 border border-[#C0C0C0]/20 hover:border-[#D8AF73]/60 text-[#C0C0C0] hover:text-[#D8AF73] px-6 py-3 text-[11px] tracking-[0.2em] font-bold uppercase transition-colors">
-                Difusores
-              </Link>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* ── FAMÍLIAS COM ANIMAÇÃO ── */}
-      <section className="bg-[#0a0a0a] py-10 px-6 border-b border-[#C0C0C0]/10">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="flex gap-3 flex-wrap">
+      {/* ── FAMÍLIAS E NAVEGAÇÃO ── */}
+      <section className="bg-[#0a0a0a] py-10 px-6 border-b border-[#C0C0C0]/10 sticky top-[125px] z-30">
+        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6">
+          <div className="flex items-center gap-3 flex-wrap">
+            
+            {/* Link Difusores: Estilo igual aos botões de filtro */}
+            <Link 
+              to="/difusores"
+              className="btn-pulse inline-flex items-center justify-center px-5 py-2.5 border border-[#C0C0C0]/15 text-[#888888] hover:text-[#C0C0C0] hover:border-[#D8AF73]/60 text-[11px] tracking-[0.18em] font-bold uppercase transition-all"
+            >
+              Difusores
+            </Link>
+
+            {/* Separador subtil */}
+            <div className="w-[1px] h-4 bg-[#C0C0C0]/10 mx-1 hidden sm:block" />
+
             {familias.map(f => {
               const isActive = familia === f;
               const accent = familiaColor[f] || familiaColor.default;
@@ -103,22 +109,19 @@ const Fragrancias = () => {
               );
             })}
           </div>
-        </div>
-      </section>
 
-      {/* ── BARRA ORDENAÇÃO ── */}
-      <section className="bg-[#0a0a0a] py-5 px-6 border-b border-[#C0C0C0]/10 sticky top-[125px] z-30">
-        <div className="max-w-[1400px] mx-auto flex items-center justify-between">
-          <span className="text-[#888888] text-[12px]">{products.length} fragrância{products.length !== 1 ? 's' : ''}</span>
-          <div className="flex items-center gap-2 border border-[#C0C0C0]/15 px-3 py-2">
-            <SlidersHorizontal size={13} className="text-[#888888]" />
-            <select
-              value={order}
-              onChange={e => setOrder(Number(e.target.value))}
-              className="bg-transparent text-[#C0C0C0] text-[11px] font-bold tracking-wider outline-none cursor-pointer"
-            >
-              {ordenacoes.map((o, i) => <option key={o.label} value={i} className="bg-[#0a0a0a]">{o.label}</option>)}
-            </select>
+          <div className="flex items-center justify-between md:justify-end gap-4 min-w-[200px]">
+            <span className="text-[#888888] text-[12px]">{products.length} fragrância{products.length !== 1 ? 's' : ''}</span>
+            <div className="flex items-center gap-2 border border-[#C0C0C0]/15 px-3 py-2">
+              <SlidersHorizontal size={13} className="text-[#888888]" />
+              <select
+                value={order}
+                onChange={e => setOrder(Number(e.target.value))}
+                className="bg-transparent text-[#C0C0C0] text-[11px] font-bold tracking-wider outline-none cursor-pointer"
+              >
+                {ordenacoes.map((o, i) => <option key={o.label} value={i} className="bg-[#0a0a0a]">{o.label}</option>)}
+              </select>
+            </div>
           </div>
         </div>
       </section>
