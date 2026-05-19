@@ -17,7 +17,9 @@ import Sobre from './pages/Sobre';
 import Contactos from './pages/Contactos';
 import Perfil from './pages/Perfil';
 import Difusores from './pages/Difusores';
+import DifusorDetalhe from './pages/DifusorDetalhe';
 import Fragrancias from './pages/Fragrancias';
+import FragranciaDetalhe from './pages/FragranciaDetalhe';
 import PoliticaPrivacidade from './pages/PoliticaPrivacidade';
 import Aromaterapia from './pages/Aromaterapia';
 
@@ -42,15 +44,17 @@ function App() {
       <div className="App">
         <BrowserRouter>
           <Routes>
-            <Route path="/"                        element={<Home />} />
-            <Route path="/segmentos"               element={<Segmentos />} />
-            <Route path="/sobre"                   element={<Sobre />} />
-            <Route path="/aromaterapia"            element={<Aromaterapia />} />
-            <Route path="/contactos"               element={<Contactos />} />
-            <Route path="/perfil"                  element={<Perfil />} />
-            <Route path="/difusores"               element={<Difusores />} />
-            <Route path="/fragrancias"             element={<Fragrancias />} />
-            <Route path="/politica-de-privacidade" element={<PoliticaPrivacidade />} />
+            <Route path="/"                          element={<Home />} />
+            <Route path="/segmentos"                 element={<Segmentos />} />
+            <Route path="/sobre"                     element={<Sobre />} />
+            <Route path="/aromaterapia"              element={<Aromaterapia />} />
+            <Route path="/contactos"                 element={<Contactos />} />
+            <Route path="/perfil"                    element={<Perfil />} />
+            <Route path="/difusores"                 element={<Difusores />} />
+            <Route path="/difusores/:id"             element={<DifusorDetalhe />} />
+            <Route path="/fragrancias"               element={<Fragrancias />} />
+            <Route path="/fragrancias/:id"           element={<FragranciaDetalhe />} />
+            <Route path="/politica-de-privacidade"   element={<PoliticaPrivacidade />} />
           </Routes>
           <CookieConsent />
         </BrowserRouter>

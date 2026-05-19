@@ -32,7 +32,7 @@ const ThemeToggle = () => {
         size={11}
         strokeWidth={2.2}
         className="absolute right-[7px] transition-opacity duration-300"
-        style={{ color: isDark ? '#888888' : '#D8AF73', opacity: isDark ? 0.4 : 0 }}
+        style={{ color: isDark ? '#ffffff' : '#D8AF73', opacity: isDark ? 0.4 : 0 }}
       />
 
       {/* Sliding pill */}
